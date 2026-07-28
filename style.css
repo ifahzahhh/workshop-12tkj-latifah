@@ -1,0 +1,118 @@
+/* 1. CSS Reset: Menetralkan margin dan padding bawaan browser (User Agent Stylesheet). */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Custom Properties (Variabel CSS): Mendefinisikan skema warna global untuk memfasilitasi implementasi tema (mis. Dark Mode). */
+:root {
+    --bg-color: #e2e8f0;     /* Warna latar belakang web */
+    --card-bg: #ffffff;      /* Warna latar kartu */
+    --text-color: #333333;   /* Warna teks utama */
+    /* TUGAS 5 (Variabel CSS): Modifikasi nilai properti '--primary' dengan nama warna (Color Keyword) pilihan Anda (contoh: red, pink, purple, blue). Warna ini akan menjadi aksen utama antarmuka. */
+    --primary: pink;      
+}
+
+/* Definisi Skema Warna Alternatif: Berlaku secara hirarkis ketika kelas 'dark-mode' diinjeksikan ke dalam elemen <body>. */
+body.dark-mode {
+    --bg-color: #0f172a;
+    --card-bg: #242f42;
+    --text-color: #f8fafc;
+    --primary: rgb(137, 82, 92);
+}
+
+/* 3. Tata Letak Fleksibel (Flexbox): Memusatkan elemen kartu (card) secara vertikal dan horizontal di tengah viewport layar. */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Tinggi 100% dari layar */
+    transition: background-color 0.4s ease; /* Animasi pergantian warna halus */
+}
+
+/* 4. Penataan Kotak (Box Model) & Visualisasi Kartu: Mendefinisikan dimensi, bayangan (shadow), dan batasan relatif. */
+.card {
+    background-color: var(--card-bg);
+    width: 350px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: background-color 0.4s ease;
+    position: relative; /* Menjadi acuan untuk elemen absolute di dalamnya */
+}
+
+/* 5. Dekorasi Media & Properti Radius */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    /* TUGAS 6 (Properti Border Radius): Sesuaikan nilai 'border-radius' menjadi 10px jika Anda menghendaki bentuk profil berupa persegi panjang bersudut tumpul, alih-alih lingkaran sempurna (50%). */
+    border-radius: 20px; 
+    border: 4px solid var(--primary);
+    margin-bottom: 15px;
+    /* border-color:;  */
+}
+
+/* 6. Aturan Tipografi: Mengatur hierarki dan spasi teks. */
+.name { margin-bottom: 5px; }
+.role { color: var(--primary); font-weight: bold; margin-bottom: 15px; }
+.bio { font-size: 14px; line-height: 1.5; margin-bottom: 20px; opacity: 0.8; }
+
+/* 7. Tata Letak Keahlian (Skills): Menggunakan Flexbox dengan properti 'wrap' agar lencana keahlian secara otomatis turun ke baris baru apabila melebihi lebar wadah. */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.skill {
+    background-color: var(--primary);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 8. Dekorasi Tautan Media Sosial & Transisi Interaktif */
+.social-links { display: flex; gap: 15px; justify-content: center; }
+
+.social-links a {
+    text-decoration: none;
+    font-size: 28px; /* Memperbesar ukuran icon */
+    transition: transform 0.3s ease; /* Transisi untuk animasi */
+}
+
+.social-links a:hover {
+    transform: scale(1.2); /* Efek membesar saat kursor diarahkan (hover) */
+}
+
+/* Warna Otentik Brand */
+.fa-github { color: #181717; }
+.fa-whatsapp { color: #25D366; }
+.fa-instagram { color: #E1306C; }
+
+/* Penyesuaian visibilitas icon GitHub saat mode gelap aktif */
+body.dark-mode .fa-github { color: white; }
+
+/* 9. Elemen Absolut (Theme Toggle): Memosisikan tombol secara absolut dan mengeluarkannya dari aliran (flow) dokumen reguler. */
+.btn-theme {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.btn-theme:hover { background-color: rgba(0,0,0,0.05); }

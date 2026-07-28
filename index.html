@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Profil Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <div class="card">
+        <!-- KOMPONEN: Tombol Toggle Tema (Pemicu Event JavaScript) -->
+        <button id="themeToggle" class="btn-theme"><i class="fa-solid fa-moon"></i></button>
+
+        <!-- TUGAS 1 (Path Gambar Lokal): Simpan file foto wajahmu (berformat .jpg/.png) ke dalam folder 'images', lalu ubah atribut 'src' di bawah ini dengan nama file fotomu (contoh: "images/foto-saya.jpg"). -->
+        <img src="images/myfoto.jpg" alt="Foto Profil" class="profile-img">
+
+        <!-- KOMPONEN: Informasi Identitas Diri -->
+        <!-- TUGAS 2 (Modifikasi Teks Node): Ganti teks placeholder di dalam tag <h2> dan <p> dengan informasi identitas Anda masing-masing. -->
+        <h2 class="name">LATIFAH AZ-ZAHRA</h2>
+        <p class="role">Siswa Kelas 12 TKJ - SMKN 3 YOGYAKARTA</p>
+        <p class="bio">TETAP SEMANGAT</p>
+
+        <!-- KOMPONEN: Daftar Keahlian IT (Skills) -->
+        <div class="skills">
+            <!-- TUGAS 3 (Elemen Inline): Perbarui konten teks pada elemen <span> di bawah ini untuk merepresentasikan kompetensi teknis yang Anda miliki (contoh: Mikrotik, Cisco, Administrasi Linux). -->
+            <span class="skill">Masak dan Makan</span>
+            <span class="skill">Membaca</span>
+            <span class="skill">Merajut</span>
+            <span class="skill">Menghalu</span>
+        </div>
+
+        <!-- KOMPONEN: Tautan Media Sosial -->
+        <div class="social-links">
+            <!-- TUGAS 4 (Atribut Hyperlink): Perbarui atribut 'href' pada elemen <a> (anchor) berikut dengan URL profil media sosial Anda. Atribut target="_blank" akan membuka tautan di tab baru. -->
+            <a href="https://github.com/ifahzahhh" class="fa-brands fa-github" target="_blank"></a>
+            <a href="https://wa.me/6282322935342" class="fa-brands fa-whatsapp" target="_blank"></a>
+            <a href="https://www.instagram.com/_ifahazzahr?igsh=bWFkdmxlaHI0Nnhx" class="fa-brands fa-instagram" target="_blank"></a>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
